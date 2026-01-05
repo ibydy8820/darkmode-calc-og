@@ -1,36 +1,108 @@
 :root {
   --bg-color: #000000;
   --calc-bg: #1c1c1c;
-  --btn-bg: #333333;
-  --btn-active: #4d4d4d;
-  --btn-operator: #ff9f0a;
-  --btn-operator-active: #e68a00;
-  --btn-top: #a5a5a5;
-  --text-white: #ffffff;
-  --text-black: #000000;
+  --btn-color: #333333;
+  --btn-hover: #4d4d4d;
+  --btn-active: #666666;
+  --accent-color: #ff9f0a;
+  --accent-hover: #ffb340;
+  --text-primary: #ffffff;
+  --text-secondary: #a5a5a5;
+  --danger-color: #ff453a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: var(--bg-color);
-  color: var(--text-white);
+  color: var(--text-primary);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
+.calc-container {
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--calc-bg);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.display {
+  background-color: transparent;
+  color: var(--text-primary);
+  text-align: right;
+  padding: 20px 10px;
+  font-size: 3rem;
+  font-weight: 300;
+  min-height: 100px;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
 button {
   border: none;
-  border-radius: 50%;
+  outline: none;
+  background-color: var(--btn-color);
+  color: var(--text-primary);
   font-size: 1.5rem;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
-  transition: filter 0.2s;
-  user-select: none;
+  transition: background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background-color: var(--btn-hover);
 }
 
 button:active {
-  filter: brightness(1.2);
+  background-color: var(--btn-active);
+}
+
+button.span-2 {
+  grid-column: span 2;
+  width: 100%;
+  border-radius: 30px;
+  padding-left: 24px;
+  justify-content: flex-start;
+}
+
+button.accent {
+  background-color: var(--accent-color);
+  font-weight: 500;
+}
+
+button.accent:hover {
+  background-color: var(--accent-hover);
+}
+
+button.gray {
+  background-color: #a5a5a5;
+  color: #000000;
+}
+
+button.gray:hover {
+  background-color: #d4d4d4;
 }

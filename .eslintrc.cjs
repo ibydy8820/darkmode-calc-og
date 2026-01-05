@@ -6,7 +6,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'prettier', 
+    'prettier', // Отключает конфликтующие с Prettier правила
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
@@ -17,6 +17,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'react/prop-types': 'off', // Using simple prop validation or none for MVP
+    'react/prop-types': 'off', // Для простого проекта можно отключить
   },
 }

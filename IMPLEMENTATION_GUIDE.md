@@ -4,7 +4,9 @@
 
 ## Технологии
 - react
-- tailwind css
+- css (flexbox
+- grid)
+- vite
 
 ---
 

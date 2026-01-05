@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fixed Dark Theme defaults */
 body {
-  @apply bg-slate-950 text-slate-100 antialiased h-screen w-screen overflow-hidden flex items-center justify-center;
-}
-
-#root {
-  @apply w-full h-full flex flex-col;
+  @apply bg-gray-950 text-gray-100 antialiased;
+  /* Prevent scrolling on mobile */
+  overflow: hidden; 
 }
